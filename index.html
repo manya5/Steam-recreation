@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to Steam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- JQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- RemixIcon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    
+    <!-- linking css files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <!-- LOADER  -->
+     <div class="loader w-full h-screen font-[azonix] bg-[#111725] overflow-hidden absolute top-0 left-0 z-[1200]">
+      <div class="overlay-grain-pattern overlay-grain-basic"></div>
+        <div class="upper-circle">
+            <div class="clk-stripe clk-stp1">
+                <h2>0</h2>
+                <h2>5</h2>
+            </div>
+            <div class="clk-stripe clk-stp2">
+                <h2>1</h2>
+                <h2>6</h2>
+            </div>
+            <div class="clk-stripe clk-stp3">
+                <h2>2</h2>
+                <h2>7</h2>
+            </div>
+            <div class="clk-stripe clk-stp4">
+                <h2>3</h2>
+                <h2>8</h2>
+            </div>
+            <div class="clk-stripe clk-stp5">
+                <h2>4</h2>
+                <h2>9</h2>
+            </div>
+        </div>
+        <div class="lower-circle">
+            <div class="lclk-stripe lclk-stp1">
+                <h2>2</h2>
+                <h2>7</h2>
+            </div>
+            <div class="lclk-stripe lclk-stp2">
+                <h2>1</h2>
+                <h2>6</h2>
+            </div>
+            <div class="lclk-stripe lclk-stp3">
+                <h2>0</h2>
+                <h2>5</h2>
+            </div>
+            <div class="lclk-stripe lclk-stp4">
+                <h2>9</h2>
+                <h2>4</h2>
+            </div>
+            <div class="lclk-stripe lclk-stp5">
+                <h2>8</h2>
+                <h2>3</h2>
+            </div>
+        </div>
+
+        <div class="mid-circle w-24 h-24 rounded-full bg-sky-950 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[5] max-sm:w-20 max-sm:h-20"></div>
+    </div>    
+
+    <div class="main bg-[url(images/steam-bg.png)] bg-repeat overflow-hidden">
+
+
+
+      <!-- LANDING PAGE -->
+      <div class="landing-page relative w-full h-screen z-[1000]">
+
+        <div class="top-bar max-sm:top-[7%] absolute w-[90vw] h-[10vw] top-[-2%] left-[50%] -translate-x-[50%] flex justify-between items-center z-[120]">
+
+          <img class="max-sm:w-[35vw] w-[12vw]" src="images/steam_logo.svg"
+            alt=""/>
+  
+          <div class="top-right flex items-center justify-center gap-5">
+            <button class="install-btn bg-green-800 text-white px-3 py-3 font-[twk] max-sm:px-2 max-sm:py-2 max-sm:text-[3.8vw] rounded-lg hover:bg-green-700 transition">Install Steam</button>
+            <i class="nav-btn ri-menu-3-line max-sm:text-[8vw] text-[2.5vw] invert cursor-pointer"></i>
+  
+          </div>
+        </div>
+
+        <div class="nav-overlay hidden z-[500] absolute w-full h-full top-0 left-0"></div>
+
+        <audio class="open-nav-sound absolute" src="sound-effects/UI_menu_OPEN.mp3"></audio>
+        <audio class="close-nav-sound absolute" src="sound-effects/UI_menu_CLOSE.mp3"></audio>
+        <audio class="nav-hover-sound absolute" src="sound-effects/UI_menu_rollover.mp3"></audio>
+
+        <div class="nav-menu hidden absolute bg-[#1D2024] top-[2%] right-[-50%] w-[40%] h-[96%] z-[700] opacity-0 rounded-[10px]  max-sm:w-[100vw] max-sm:h-[95vh] max-sm:rounded-none max-sm:top-0 font-[abc]">
+          <div class="overlay-grain-pattern overlay-grain-basic"></div>
+          <div class="cross-line absolute w-[8vw] max-sm:w-[20vw] h-[.1px] bg-[#424140] top-[12%] right-0"></div>
+
+           <div class="nav-items flex flex-col items-between justify-between w-[80%] h-full">
+             <div class="nav-top w-full flex justify-between items-center px-10 max-sm:flex-col max-sm:justify-between max-sm:items-start max-sm h-[25%] py-4 mt-4">
+
+               <div class="search-bar flex gap-2 px-4 mb-6">
+                 <i class="ri-search-2-line text-white text-2xl cursor-pointer"></i> 
+                 <input type="text" placeholder="Search..." class="bg-transparent font-[aeonik] text-white outline-none placeholder:text-white text-xl border-b-[1px] border-white w-[60%]">
+
+               </div>
+              <button class="signin-btn text-[1.35rem] w-[8rem] rounded-md text-white mb-6 font-[abc] font-bold cursor-pointer bg-green-800 px-2 py-1 uppercase max-sm:text-2xl">Sign In</button>
+             </div>
+
+             <div class="nav-main w-full h-[50%] px-10 py-8 gap-20 max-sm:h-[70%]">
+               <h1 class="shuffle font-[abc]">Store</h1>
+               <h1 class="shuffle font-[abc]">Community</h1>
+               <h1 class="shuffle font-[abc]">About</h1>
+               <h1 class="shuffle font-[abc]">Support</h1>
+               <h1 class="shuffle font-[abc]">News</h1>
+             </div>
+
+             <div class="nav-btm w-full h-[35%] px-10 flex items-start justify-center gap-2 flex-col py-10 ">
+               <img src="images/footerLogo_valve_new.png" class="w-[8vw] max-sm:w-[20vw]"  alt="">
+               <p class="text-gray-500 text-[.9vw] max-sm:text-[3vw]">© 2024 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.</p>
+             </div>
+          </div>
+          <div class="nav-right w-[20%] relative h-full flex flex-col items-center justify-start gap-[18vw] border-l-[.01px] border-neutral-700 py-4">
+            <i class="close-nav text-5xl cursor-pointer ri-close-line block text-end text-white max-sm:absolute max-sm:top-[3%]"></i>
+            <i class="ri-steam-fill text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl"></i>
+          </div>
+        </div>
+
+        <div class="install-steam-section relative bg-[#1D2024] -top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[98%] h-[96%] max-sm:h-[60%] z-[500] px-40 py-10 flex justify-center items-center max-sm:flex-col rounded-lg gap-2 max-sm:px-2">
+          <div class="overlay-grain-pattern overlay-grain-basic"></div>
+          
+          <i class="close-steam-install ri-close-large-fill absolute right-[12%] z-[600] top-[7%] max-sm:top-[3%] max-sm:right-[6%]  cursor-pointer text-[2.2vw] text-white max-sm:text-[7vw]"></i>
+
+          <div class="install-left w-[40%] max-sm:w-[80%]  font-[twk]  h-full flex flex-col gap-4 justify-center">
+
+            <img class="w-[17vw] max-sm:w-[25vw]" src="images/steam-logo-install-steam.svg" alt="">
+            <h3 class="text-white text-[1.5vw] max-sm:text-[3.2vw]">Steam is the ultimate destination for playing, discussing, and creating games.</h3>
+            <div class="active-audience flex gap-[20%]">
+              <div class="online-audience">
+                <h5 class="text-slate-300 text-[.8vw] max-sm:text-[2.2vw]"><i class="ri-circle-fill text-blue-500"></i> &nbsp; ONLINE</h5>
+                <h3 class="text-white text-[2vw] max-sm:text-[4vw]">24,776,252</h3>
+              </div>
+              <div class="playing-now-audience">
+                <h5 class="text-slate-300 text-[.8vw] max-sm:text-[2.2vw]"><i class="ri-circle-fill text-green-500"></i> &nbsp; PLAYING NOW</h5>
+                <h3 class="text-white text-[2vw] max-sm:text-[4vw]">6,827,808</h3>
+              </div>
+            </div>
+            <button class="text-white bg-[#0971E5] hover:bg-blue-700 text-start px-4 py-4 text-[1.1vw] max-sm:text-[3vw] max-sm:px-2 max-sm:py-2 font-bold">Get the app for mobile</button>
+            <p class="text-white text-[.85vw] text-center max-sm:text-[2.4vw]">The <span class="underline">Steam mobile apps</span> support your PC gaming experience on the go</p>
+            <h4 class="font-bold text-white text-[1.1vw] text-center max-sm:text-[3vw] uppercase">Start playing now...</h4>
+            <button class="text-white bg-gray-700 hover:bg-[#303336] text-start px-4 py-4 text-[1.1vw] max-sm:text-[3vw] max-sm:px-2 max-sm:py-2 max-sm:hidden">Get the app for PC</button>
+          </div>
+
+          <div class="install-right w-[60%] max-sm:w-[80%] h-full flex justify-center items-center max-sm:hidden">
+            <video width="100%" height="auto" autoplay=""  muted="" loop=""  poster="https://cdn.akamai.steamstatic.com/store/about/videos/about_hero_loop_web.png">
+              <source src="https://cdn.akamai.steamstatic.com/store/about/videos/about_hero_loop_web.webm" type="video/webm">
+              <source src="https://cdn.akamai.steamstatic.com/store/about/videos/about_hero_loop_web.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+        </div>
+
+        <div class="img-crsr flex items-center justify-center w-[8rem]  h-[8rem] rounded-full fixed z-[999] opacity-0">
+          <p class="text-white text-[1vw] font-bold font-[twk]"><- Drag -></p>
+        </div>
+        
+        <div class="overlay top-0 left-0 absolute w-full h-screen z-[100] "></div>
+        
+        <i class="ri-play-circle-fill vdo-btn absolute z-[120] top-[90%] left-[50%] -translate-x-[50%] text-slate-800 text-6xl bg-white w-7 h-7 flex justify-center items-center rounded-full cursor-pointer border-none max-sm:top-[85%]"></i>  
+        
+        
+        
+        <video class="main-video absolute w-full h-screen top-0 left-0 z-[90] object-cover object-center" src="./videos/main-video.mp4" autoplay loop muted></video>
+        
+        <div class="swiper mySwiper absolute z-[150] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
+
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <img src="images/landing-page-images/ghost-of-tsushima/img1.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img  src="images/landing-page-images/pubg/img1.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/landing-page-images/valhalla/img1.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/landing-page-images/apex/img1.webp"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/landing-page-images/sottr/img1.webp"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/landing-page-images/rdr2/img1.webp"/>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+  
+
+      <!-- CATEGORY SECTION  -->
+      <div class="category-page bg-[url(images/steam-bg.png)] bg-repeat relative w-full h-[120vh] max-sm:h-[70vh] z-[1900]">
+        <!-- <div class="overlay-grain-pattern overlay-grain-basic"></div> -->
+        <audio class="category-panel-hover" src="sound-effects/category-items-click.mp3" autoplay="true"></audio>
+        
+        <!-- for action  -->
+        <div class="clicked-category action-at absolute w-full h-full scale-2 top-0 left-0  flex-col items-center justify-center z-[1000] hidden opacity-0 px-20 max-sm:px-0">
+          <audio class="cat-bgm" src="sounds/category-sounds/s1.mp3"></audio>
+          <div class="category-side-overlay bg-black opacity-0 z-[1200] absolute top-0 left-0 w-full h-full"></div>
+          <video class="cat-bg w-full h-full z-[-1] absolute top-0 left-0 object-cover" src="videos/live-wallpapers/action.mp4" autoplay muted loop></video>
+          <h1 class="text-[4vw] max-sm:text-[8vw] z-[1250] text-white font-[gestura] tracking-tight font-semibold">ACTION</h1>
+          <p class="desc max-sm:text-[3.2vw] max-sm:w-[80%] w-[65%] z-[1250] text-[1.6vw] font-[aeonik] text-center text-white">
+            Dive into high-speed, adrenaline-pumping adventures where reflexes and skill are key. Experience intense combat, thrilling chases, and epic battles in dynamic and fast-paced environments.
+          </p>
+          <button class="view border-2 z-[1250] border-white hover:bg-white hover:text-black cursor-pointer mt-4 text-white text-[1.5vw] max-sm:text-[4vw] px-2 py-1 rounded-md">View More</button>
+          <i id="cc" class="close-cat ri-arrow-left-circle-line z-[1250] text-white text-[4.5vw] max-sm:text-[8vw] font-[twk] cursor-pointer hover:text-slate-500"></i>
+        </div>
+
+
+        <!-- for anime  -->
+        <div class="clicked-category absolute w-full h-full scale-2 top-0 left-0 flex-col items-center justify-center z-[1000] hidden opacity-0 px-20 max-sm:px-0">
+          <audio class="cat-bgm" src="sounds/category-sounds/s2.mp3"></audio>
+          <div class="category-side-overlay bg-black opacity-0 z-[1200] absolute top-0 left-0 w-full h-full"></div>
+          <video class="cat-bg w-full h-full z-[-1] absolute top-0 left-0 object-cover" src="videos/live-wallpapers/anime2.mp4" autoplay muted loop></video>
+          <h1 class="text-[4vw] max-sm:text-[8vw] z-[1250] text-white font-[gestura] tracking-tight font-semibold">ANIME</h1>
+          <p class="desc max-sm:text-[3.2vw] max-sm:w-[80%] w-[65%] z-[1250] text-[1.6vw] font-[aeonik] text-center text-white">
+            Dive into vibrant worlds inspired by your favorite anime. Enjoy captivating storylines, stylized visuals, and dynamic gameplay that bring beloved characters and epic adventures to life.
+          </p>
+          <button class="view border-2 z-[1250] border-white hover:bg-white hover:text-black cursor-pointer mt-4 text-white text-[1.5vw] max-sm:text-[4vw] px-2 py-1 rounded-md">View More</button>
+          <i id="cc" class="close-cat ri-arrow-left-circle-line z-[1250] text-white text-[4.5vw] max-sm:text-[8vw] font-[twk] cursor-pointer hover:text-slate-500"></i>
+        </div>  
+
+        <!-- all sports  -->
+        <div class="clicked-category absolute w-full h-full scale-2 top-0 left-0 flex-col items-center justify-center z-[1000] hidden opacity-0 px-20 max-sm:px-0">
+          <audio class="cat-bgm" src="sounds/category-sounds/s3.mp3"></audio>
+          <div class="category-side-overlay bg-black opacity-0 z-[1200] absolute top-0 left-0 w-full h-full"></div>
+          <video class="cat-bg w-full h-full z-[-1] absolute top-0 left-0 object-cover" src="videos/live-wallpapers/all-sports.mp4" autoplay muted loop></video>
+          <h1 class="text-[4vw] max-sm:text-[8vw] z-[1250] text-white font-[gestura] tracking-tight font-semibold">ALL SPORTS</h1>
+          <p class="desc max-sm:text-[3.2vw] max-sm:w-[80%] w-[65%] z-[1250] text-[1.6vw] font-[aeonik] text-center text-white">
+            Experience the thrill of competition with realistic or fantasy sports simulations. Play your favorite sports, master skills, and compete for glory in immersive and dynamic arenas.
+          </p>
+          <button class="view border-2 z-[1250] border-white hover:bg-white hover:text-black cursor-pointer mt-4 text-white text-[1.5vw] max-sm:text-[4vw] px-2 py-1 rounded-md">View More</button>
+          <i id="cc" class="close-cat ri-arrow-left-circle-line z-[1250] text-white text-[4.5vw] max-sm:text-[8vw] font-[twk] cursor-pointer hover:text-slate-500"></i>
+        </div>
+
+        <!-- for rpg  -->
+        <div class="clicked-category absolute w-full h-full scale-2 top-0 left-0 flex-col items-center justify-center z-[1000] hidden opacity-0 px-20 max-sm:px-0">
+          <audio class="cat-bgm" src="sounds/category-sounds/s4.mp3"></audio>
+          <div class="category-side-overlay bg-black opacity-0 z-[1200] absolute top-0 left-0 w-full h-full"></div>
+          <video class="cat-bg w-full h-full z-[-1] absolute top-0 left-0 object-cover" src="videos/live-wallpapers/rpg.mp4" autoplay muted loop></video>
+          <h1 class="text-[4vw] max-sm:text-[8vw] z-[1250] text-white font-[gestura] tracking-tight font-semibold">ROLE PLAYING</h1>
+          <p class="desc max-sm:text-[3.2vw] max-sm:w-[80%] w-[65%] z-[1250] text-[1.6vw] font-[aeonik] text-center text-white">
+            Embark on epic adventures, customize characters, and explore vast worlds. Experience captivating stories where every choice matters in our diverse RPG collection.
+          </p>
+          <button class="view border-2 z-[1250] border-white hover:bg-white hover:text-black cursor-pointer mt-4 text-white text-[1.5vw] max-sm:text-[4vw] px-2 py-1 rounded-md">View More</button>
+          <i id="cc" class="close-cat ri-arrow-left-circle-line z-[1250] text-white text-[4.5vw] max-sm:text-[8vw] font-[twk] cursor-pointer hover:text-slate-500"></i>
+        </div>
+
+        <!-- for survival  -->
+        <div class="clicked-category absolute w-full h-full scale-2 top-0 left-0 flex-col items-center justify-center z-[1000] hidden opacity-0 px-20 max-sm:px-0">
+          <audio class="cat-bgm" src="sounds/category-sounds/s5.mp3"></audio>
+          <div class="category-side-overlay bg-black opacity-0 z-[1200] absolute top-0 left-0 w-full h-full"></div>
+          <video class="cat-bg w-full h-full z-[-1] absolute top-0 left-0 object-cover" src="videos/live-wallpapers/survival.mp4" autoplay muted loop></video>
+          <h1 class="text-[4vw] max-sm:text-[8vw] z-[1250] text-white font-[gestura] tracking-tight font-semibold">SURVIVAL</h1>
+          <p class="desc max-sm:text-[3.2vw] max-sm:w-[80%] w-[65%] z-[1250] text-[1.6vw] font-[aeonik] text-center text-white">
+            Test your endurance and resourcefulness in harsh environments. Gather resources, build shelters, and fend off dangers as you strive to stay alive in challenging settings.
+          </p>
+          <button class="view border-2 z-[1250] border-white hover:bg-white hover:text-black cursor-pointer mt-4 text-white text-[1.5vw] max-sm:text-[4vw] px-2 py-1 rounded-md">View More</button>
+          <i id="cc" class="close-cat ri-arrow-left-circle-line z-[1250] text-white text-[4.5vw] max-sm:text-[8vw] font-[twk] cursor-pointer hover:text-slate-500"></i>
+        </div>
+
+        <!-- for multiplayer  -->
+        <div class="clicked-category absolute w-full h-full scale-2 top-0 left-0 flex-col items-center justify-center z-[1000] hidden opacity-0 px-20 max-sm:px-0">
+          <audio class="cat-bgm" src="sounds/category-sounds/s6.mp3"></audio>
+          <div class="category-side-overlay bg-black opacity-0 z-[1200] absolute top-0 left-0 w-full h-full"></div>
+          <video class="cat-bg w-full h-full z-[-1] absolute top-0 left-0 object-cover" src="videos/live-wallpapers/multiplayer.mp4" autoplay muted loop></video>
+          <h1 class="text-[4vw] max-sm:text-[8vw] z-[1250] text-white font-[gestura] tracking-tight font-semibold">MULTIPLAYER</h1>
+          <p class="desc max-sm:text-[3.2vw] max-sm:w-[80%] w-[65%] z-[1250] text-[1.6vw] font-[aeonik] text-center text-white">
+            Connect with friends and players worldwide in competitive or cooperative modes. Engage in battles, teamwork, and strategic gameplay across a variety of exciting and dynamic environments.
+          </p>
+          <button class="view border-2 z-[1250] border-white hover:bg-white hover:text-black cursor-pointer mt-4 text-white text-[1.5vw] max-sm:text-[4vw] px-2 py-1 rounded-md">View More</button>
+          <i id="cc" class="close-cat ri-arrow-left-circle-line z-[1250] text-white text-[4.5vw] max-sm:text-[8vw] font-[twk] cursor-pointer hover:text-slate-500"></i>
+        </div>
+
+        <!-- for puzzle  -->
+        <div class="clicked-category absolute w-full h-full scale-2 top-0 left-0 flex-col items-center justify-center z-[1000] hidden opacity-0 px-20 max-sm:px-0">
+          <audio class="cat-bgm" src="sounds/category-sounds/s7.mp3"></audio>
+          <div class="category-side-overlay bg-black opacity-0 z-[1200] absolute top-0 left-0 w-full h-full"></div>
+          <video class="cat-bg w-full h-full z-[-1] absolute top-0 left-0 object-cover" src="videos/live-wallpapers/puzzle.mp4" autoplay muted loop></video>
+          <h1 class="text-[4vw] max-sm:text-[8vw] z-[1250] text-white font-[gestura] tracking-tight font-semibold">PUZZLE</h1>
+          <p class="desc max-sm:text-[3.2vw] max-sm:w-[80%] w-[65%] z-[1250] text-[1.6vw] font-[aeonik] text-center text-white">
+            Challenge your mind with engaging and thought-provoking puzzles. Test your logic, strategy, and problem-solving skills across a variety of captivating and addictive gameplay experiences.
+          </p>
+          <button class="view border-2 z-[1250] border-white hover:bg-white hover:text-black cursor-pointer mt-4 text-white text-[1.5vw] max-sm:text-[4vw] px-2 py-1 rounded-md">View More</button>
+          <i id="cc" class="close-cat ri-arrow-left-circle-line z-[1250] text-white text-[4.5vw] max-sm:text-[8vw] font-[twk] cursor-pointer hover:text-slate-500"></i>
+        </div>
+        
+
+        <!-- <div class="rounded-div-wrapper w-full h-[0px] absolute mt-[10px] overflow-hidden">
+          <div class="rounded-div absolute w-[750vw] h-[750vw] bg-[#A5D2EE] rounded-full left-1/2 -translate-x-1/2"></div>
+        </div> -->
+
+        <div class="category-page-wrapper relative w-full h-[120vh] max-sm:h-[80vh] overflow-hidden px-[9.5vw] py-[8vw] max-sm:pt-[15vw]">
+          
+
+
+          <div class="category-crsr absolute cursor-pointer w-[8rem] h-[8rem]  top-0 left-0 rounded-full flex justify-center items-center scale-0 z-[500]">
+            <div class="inner-circle w-full h-full  rounded-full text-white flex justify-center items-center">CLICK</div>
+          </div>
+
+
+          <h1 class="category-title font-bold text-[2.8vw] max-sm:text-[6vw] max-sm:text-slate-200 tracking-tight leading-none text-slate-200 relative font-[redtrap] font-bolder uppercase">browse by</h1>
+          <h1 class="category-title font-bold text-[7vw] max-sm:text-[5.6vh] tracking-tight leading-none text-slate-200 relative font-[redtrap] uppercase">Category</h1>
+          <div class="circle flex justify-center items-center rounded-full">
+            <div class="stripe stp1">
+              <div class="first">
+                <!-- <h1>Action</h1> -->
+                <img class="cat-img" src="images/categories-images/img1.webp" alt="">
+              </div>
+              <div class="sec">
+                <div class="smcircle"></div>
+              </div>
+            </div>
+            <div class="stripe stp2">
+              <div class="first">
+                <img class="cat-img" src="images/categories-images/img2.webp" alt="">
+                <!-- <h1>Anime</h1> -->
+              </div>
+              <div class="sec">
+                <div class="smcircle"></div>
+              </div>
+            </div>
+            <div class="stripe stp3">
+              <div class="first">
+                <img class="cat-img" src="images/categories-images/img3.webp" alt="">
+                <!-- <h1>All Sports</h1> -->
+              </div>
+              <div class="sec">
+                <div class="smcircle"></div>
+              </div>
+            </div>
+            <div class="stripe stp4">
+              <div class="first">
+                <!-- <h1>Role Playing</h1> -->
+                
+                
+                <img class="cat-img" src="images/categories-images/img4.webp" alt="">
+                <div class="cat-desc absolute w-[30vw]  left-[0%] top-[-80%] rounded-md flex flex-col justify-center items-center gap-2 opacity-0">
+                  <!-- <div class="desc-title text-white rounded-md px-2 py-1 text-[1.4vw]">Role Playing</div> -->
+                  
+                  <!-- <img class="cat-bg relative top-0 left-0 w-[100vw] h-full" src="rpg.jpg" alt=""> -->
+                </div>
+                
+                
+              </div>
+              <div class="sec">
+                <div class="smcircle"></div>
+              </div>
+            </div>
+            <div class="stripe stp5">
+              <div class="first">
+                <img class="cat-img" src="images/categories-images/img5.webp" alt="">
+                <!-- <h1>Survival</h1> -->
+              </div>
+              <div class="sec">
+                <div class="smcircle"></div>
+              </div>
+            </div>
+            <div class="stripe stp6">
+              <div class="first">
+                <img class="cat-img" src="images/categories-images/img6.webp" alt="">
+                <!-- <h1>Multiplayer</h1> -->
+              </div>
+              <div class="sec">
+                <div class="smcircle"></div>
+              </div>
+            </div>
+            <div class="stripe stp7">
+              <div class="first">
+                <img class="cat-img" src="images/categories-images/img7.webp" alt="">
+                <!-- <h1>Puzzle</h1> -->
+              </div>
+              <div class="sec">
+                <div class="smcircle"></div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="panel absolute flex flex-col w-1/2 h-[35%] top-[59%] left-[10%]  max-sm:top-[50%] max-sm:left-[5%] -translate-y-1/2 justify-center ">
+            <h2 class="panel-items font-[gestura]">Action</h2>
+            <h2 class="panel-items font-[gestura]">Anime</h2>
+            <h2 class="panel-items font-[gestura]">All Sports</h2>
+            <h2 class="panel-items font-[gestura]">Role Playing</h2>
+            <h2 class="panel-items font-[gestura]">Survival</h2>
+            <h2 class="panel-items font-[gestura]">Multiplayer</h2>
+            <h2 class="panel-items font-[gestura]">Puzzle</h2>
+          </div>
+        </div>
+
+
+        
+      </div>
+      
+      <div class="more-games sticky top-0 bg-[url(images/steam-bg.png)] bg-repeat w-full flex items-center justify-center gap-4 py-6">
+          <div class="mg-container px-6 py-6 w-[90%] flex flex-col gap-4 max-sm:w-[100%] max-sm:px-2 max-sm:py-2">
+            <div class="mg-row1 flex gap-4 max-sm:flex-wrap max-sm:gap-2">
+              <div class="mg-cards basis-1/4 h-[17rem] max-sm:basis-[48.5%] max-sm:h-[14rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/257032261/movie480_vp9.webm?t=1718789373" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img1.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-40%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 1,799</span>&#8377 879</h2>
+                </div>
+              </div>
+              <div class="mg-cards basis-1/4 h-[17rem] max-sm:basis-[48.5%] max-sm:h-[14rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256815511/movie480_vp9.webm?t=1669135891" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img2.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-67%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 1,749</span>&#8377 577</h2>
+                </div>
+              </div>
+              <div class="mg-cards basis-1/4 h-[17rem] max-sm:basis-[48.5%] max-sm:h-[14rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256985132/movie480_vp9.webm?t=1712756070" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img3.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-20%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 730</span>&#8377 584</h2>
+                </div>
+              </div>
+              <div class="mg-cards basis-1/4 h-[17rem] max-sm:basis-[48.5%] max-sm:h-[14rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256934289/microtrailer.webm?t=1678316556" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img4.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-50%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 819</span>&#8377 409</h2>
+                </div>
+              </div>
+            </div>
+            <div class="mg-row2 flex gap-4 max-sm:flex-wrap max-sm:gap-2">
+              <div class="mg-cards basis-1/3 max-sm:basis-[100%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/257004269/movie480_vp9.webm?t=1709132456" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img5.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-25%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 250</span>&#8377 187</h2>
+                </div>
+              </div>
+              <div class="mg-cards basis-1/3 max-sm:basis-[100%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/257022389/movie480_vp9.webm?t=1715622572" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img6.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-20%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 3,499</span>&#8377 2,799</h2>
+                </div>
+              </div>
+              <div class="mg-cards basis-1/3 max-sm:basis-[100%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256784649/movie480_vp9.webm?t=1588870791" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img7.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-33%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 565 </span>&#8377 378</h2>
+                </div>
+              </div>
+            </div>
+            <div class="mg-row3 flex gap-4 max-sm:flex-wrap max-sm:gap-2">
+              <div class="mg-cards w-[25%] max-sm:w-[48%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256982920/movie480_vp9.webm?t=1700104657" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img8.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-50%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 250</span>&#8377 187</h2>
+                </div>
+              </div>
+              <div class="mg-cards w-[25%] max-sm:w-[48%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256918530/movie480_vp9.webm?t=1670012877" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img9.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-33%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 565</span>&#8377 378</h2>
+                </div>
+              </div>
+              <div class="mg-cards w-[25%] max-sm:w-[48%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256998299/movie480_vp9.webm?t=1712013029" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img10.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-10%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 770</span>&#8377 693</h2>
+                </div>
+              </div>
+              <div class="mg-cards w-[25%] max-sm:w-[48%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256897204/movie480_vp9.webm?t=1715645472" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img11.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-20%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 730</span>&#8377 584</h2>
+                </div>
+              </div>
+            </div>
+            <div class="mg-row4 flex gap-4 max-sm:flex-wrap max-sm:gap-2">
+              <div class="mg-cards basis-1/3 max-sm:basis-[100%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/256983888/movie480_vp9.webm?t=1700582401" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img12.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-30%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 1,175</span>&#8377 822</h2>
+                </div>
+              </div>
+              <div class="mg-cards basis-1/3 max-sm:basis-[100%] max-sm:h-[14rem] h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/257006667/movie480_vp9.webm?t=1710365932" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img13.webp"></video>
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-50%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 880</span>&#8377 440</h2>
+                </div>
+              </div>
+              <div class="mg-cards basis-1/3 max-sm:basis-[100%] max-sm:h-[14rem] flex flex-col items-start justify-start h-[17rem]">
+                <video loop onmouseover="this.play(); this.currentTime='5'" onmouseout="this.pause(); this.currentTime='0'; this.load();" preload="none" muted src="https://cdn.akamai.steamstatic.com/steam/apps/257006667/movie480_vp9.webm?t=1710365932" class="mg-vid w-full h-[85%] object-cover bg-red-200" poster="images/more-games-images/mg-img14.webp"></video>
+         
+                <div class="mg-pricing bg-black h-[15%] w-[60%] max-sm:w-[100%] flex">
+                  <h2 class="mg-disc bg-[#A1CD44] w-1/3 h-full font-bold font-[twk] flex items-center justify-center">-75%</h2>
+                  <h2 class="mg-price text-white w-2/3 h-full font-bold font-twk flex items-center justify-center"><span class="text-zinc-400 line-through px-2 ">&#8377 1,500</span>&#8377 375</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+
+      <!-- STEAM GIFT CARDS SECTION -->
+      <div class="steam-gift-cards relative w-full h-screen max-sm:h-[60vh] bg-[#2A475E] font-[redtrap] z-[2400] flex justify-center items-center ">
+        <div class="overlay-grain-pattern overlay-grain-basic"></div>
+        <h1 class="explore-title cursor-pointer text-7xl uppercase absolute top-[10%] left-[10%] font-[redtrap] font-bold text-gray-100 max-sm:text-4xl">STEAM <br> GIFT CARDS</h1>
+        <div class="container absolute top-[55%] -translate-y-1/2 h-1/2 flex max-sm:h-[45%]">
+            <div class="left-cont w-1/2 h-full relative">
+                <img class="gift-cards card1" src="images/giftcards-images/lcard1.webp">
+                <img class="gift-cards card2" src="images/giftcards-images/lcard2.webp">
+                <img class="gift-cards card3" src="images/giftcards-images/lcard5.webp">
+                <img class="gift-cards card4" src="images/giftcards-images/lcard4.webp">
+                <img class="gift-cards card5" src="images/giftcards-images/lcard3.webp">
+                <img class="gift-cards card6 front-left" src="images/giftcards-images/lcard6.webp">
+            </div>
+            <div class="right-cont w-1/2 h-full relative">
+                <img class="gift-rcards rcard1" src="images/giftcards-images/rcard1.webp">
+                <img class="gift-rcards rcard2" src="images/giftcards-images/rcard2.webp">
+                <img class="gift-rcards rcard3" src="images/giftcards-images/rcard3.webp">
+                <img class="gift-rcards rcard4" src="images/giftcards-images/rcard4.webp">
+                <img class="gift-rcards rcard5" src="images/giftcards-images/rcard5.webp">
+                <img class="gift-rcards rcard6" src="images/giftcards-images/rcard6.webp">
+            </div>
+        </div>
+      </div>
+
+    <!-- EXPLORE MORE SECTION  -->
+    <div class="explore-page w-full flex relative justify-center items-center py-12 z-[3000] max-sm:py-6">
+
+      <div class="overlay-grain-pattern overlay-grain-basic"></div>
+
+      <audio class="slice-hover-sound" src="sound-effects/UI_menu_rollover.mp3"></audio>
+
+      <div class="explore-container w-[70%] rounded-md overflow-hidden max-sm:w-[100%]">
+        <div class="select-sections w-full flex justify-between gap-10 items-center px-20 mb-20 mt-12 max-sm:px-2">
+          <h2 class="exp-titles active-title">New & Trending</h2>
+          <h2 class="exp-titles">Top Sellers</h2>
+          <h2 class="exp-titles">Popular Upcoming</h2>
+          <h2 class="exp-titles">Specials</h2>
+        </div>
+        <div class="selected-section relative w-full h-[160vh] max-sm:h-[100vh]">
+          
+            
+          <div class="new-and-trending-section absolute w-full h-full flex flex-col  items-center gap-0">
+            <div class="slice nt-slice ">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw]  tracking-tight text-white">Ghost Of Tsushima</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 3,299</h3>
+              </div>
+            </div>  
+            <div class="slice nt-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Black Myth Wukong</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                    <span style="background-color:#22C55E">RPG</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 4,599</h3>
+              </div>
+            </div>  
+            <div class="slice nt-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Empires Of The Undergrowth</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color: #Fa7406">Simulation</span>
+                    <span style="background-color:#cec812 ">Strategy</span>
+                    
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right w-[12vw] h-[4vw] text-[1.2vw] text-white  flex items-center justify-center font-[twk]  overflow-hidden max-sm:w-[25vw] max-sm:h-[12vw]">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                
+                  <div class="h-full w-[40%] bg-[#A1CD44] flex justify-center items-center px-2 py-4">
+                    <span class="discount text-black bg-[#A1CD44] font-bold text-[1.2vw] max-sm:text-[3vw]">-35%</span>
+                  </div>
+                  <div class="pricing_tag w-[60%] bg-black h-full flex flex-col justify-center items-center">
+                    <span class="org-price bg-black text-sm line-through text-zinc-200 max-sm:text-[2.8vw]">₹ 999</span>
+                    <div class="discounted_price bg-black text-[1.2vw] text-white font-semibold max-sm:text-[3vw]">₹ 649</div>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="slice nt-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Street Fighter 6 </h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43f52">Action</span>
+                    <span style="background-color: #FACC15">Adventure</span>
+                    
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 1,999</h3>
+              </div>
+            </div>  
+            <div class="slice nt-slice">
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Elden Ring</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43f52">Action</span>
+                    <span style="background-color:#cec812">Strategy</span>
+                    <span style="background-color:#22C55E">RPG</span>
+                   
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 2,519</h3>
+              </div>
+            </div>  
+            <div class="slice nt-slice">
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Baludar's Gate</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43f52">Adventure</span>
+                    <span style="background-color:#22C55E">RPG</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 2,399</h3>
+              </div>
+            </div>  
+          </div>
+          <div class="top-sellers-section absolute left-[100%] w-full h-full flex flex-col items-center gap-0">
+            <div class="slice ts-slice">
+              <div class="slice-overlay"></div>
+              
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Pubg</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43f52">Action</span>
+                    <span style="background-color: #FACC15">Adventure</span>
+                    <span style="background-color:  #3075f6c0">Multiplayer</span>
+                    
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-[#A1CD44] bg-black font-semibold  px-4 py-2 free-to-play">Free to Play</h3>
+              </div>
+            </div>  
+            <div class="slice ts-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Counter-Strike 2</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43f52">Action</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 349</h3>
+              </div>
+            </div>  
+            <div class="slice ts-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Black Myth Wukong</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                    <span style="background-color:#22C55E">RPG</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 4,599</h3>
+              </div>
+            </div>  
+            <div class="slice ts-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Destiny 2</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-[#A1CD44] bg-black font-semibold  px-4 py-2 free-to-play">Free to Play</h3>
+              </div>
+            </div>  
+            <div class="slice ts-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Dota 2</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#cec812">Strategy</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 1,999</h3>
+              </div>
+            </div>  
+            <div class="slice ts-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Elden Ring</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43f52">Action</span>
+                    <span style="background-color:#cec812">Strategy</span>
+                    <span style="background-color:#22C55E">RPG</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 2,519</h3>
+              </div>
+            </div>  
+          </div>
+          <div class="popular-upcoming-section absolute left-[200%] w-full h-full flex flex-col items-center gap-0">
+            <div class="slice pu-slice">
+              <div class="slice-overlay"></div>
+              
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">God Of War</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                    <span style="background-color:#22C55E">RPG</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 3,299</h3>
+              </div>
+            </div>  
+            <div class="slice pu-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Dota 2</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#cec812">Strategy</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-[#A1CD44] bg-black font-semibold  px-4 py-2 free-to-play">Free to Play</h3>
+              </div>
+            </div>  
+            <div class="slice pu-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Avatar Frontiers Of Pandora</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 2,099</h3>
+              </div>
+            </div>  
+            <div class="slice pu-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Frostpunk 2</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color: #Fa7406">Simulation</span>
+                    <span style="background-color:#cec812 ">Strategy</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 1,800</h3>
+              </div>
+            </div>  
+            <div class="slice pu-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Still Wakes The Deep</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 1,350</h3>
+              </div>
+            </div>  
+            <div class="slice ts-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Elden Ring</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43f52">Action</span>
+                    <span style="background-color:#cec812">Strategy</span>
+                    <span style="background-color:#22C55E">RPG</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 2,519</h3>
+              </div>
+            </div> 
+          </div>
+          <div class="specials-section absolute left-[300%] w-full h-full flex flex-col items-center gap-0">
+            <div class="slice s-slice">
+              <div class="slice-overlay"></div>
+              
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Dead Space</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right w-[12vw] h-[4vw] text-[1.2vw] text-white  flex items-center justify-center font-[twk]  overflow-hidden max-sm:w-[25vw] max-sm:h-[12vw]">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <div class="h-full w-[40%] bg-[#A1CD44] flex justify-center items-center px-2 py-4">
+                  <span class="discount text-black bg-[#A1CD44] font-bold text-[1.2vw] max-sm:text-[3vw]">-65%</span>
+                </div>
+                <div class="pricing_tag w-[60%] bg-black h-full flex flex-col justify-center items-center">
+                  <span class="org-price bg-black text-sm line-through text-zinc-200 max-sm:text-[2.8vw]">₹ 3,499</span>
+                  <div class="discounted_price bg-black text-[1.2vw] text-white font-semibold max-sm:text-[3vw]">₹ 1,224</div>
+                </div>
+              </div>
+            </div>  
+            <div class="slice s-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Sifu</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#60A5FA">Indie</span>
+                    
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right w-[12vw] h-[4vw] text-[1.2vw] text-white  flex items-center justify-center font-[twk]  overflow-hidden max-sm:w-[25vw] max-sm:h-[12vw]">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <div class="h-full w-[40%] bg-[#A1CD44] flex justify-center items-center px-2 py-4">
+                  <span class="discount text-black bg-[#A1CD44] font-bold text-[1.2vw] max-sm:text-[3vw]">-50%</span>
+                </div>
+                <div class="pricing_tag w-[60%] bg-black h-full flex flex-col justify-center items-center">
+                  <span class="org-price bg-black text-sm line-through text-zinc-200 max-sm:text-[2.8vw]">₹ 1,249</span>
+                  <div class="discounted_price bg-black text-[1.2vw] text-white font-semibold max-sm:text-[3vw]">₹ 624</div>
+                </div>
+              </div>
+            </div>  
+            <div class="slice s-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Street Fighter 6</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 1,999</h3>
+              </div>
+            </div>  
+            <div class="slice s-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Assassin Creed Mirage</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#FACC15">Adventure</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]   font-semibold px-4 py-2">₹ 4,599 </h3>
+                
+              </div>
+            </div>  
+            <div class="slice s-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Uncharted</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    
+                    <span style="background-color:#FACC15">Adventure</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                <h3 class="slice-r-text text-[1.2vw] max-sm:text-[3vw] text-black bg-[#A1CD44]  font-semibold px-4 py-2">₹ 1,649</h3>
+              </div>
+            </div>  
+            <div class="slice s-slice">
+              <div class="slice-overlay"></div>
+              <div class="slice-left w-[60%] h-full flex gap-10 items-center">
+                <div class="slice-left-r">
+                  <h3 class="slice-title leading-none  text-4xl max-sm:text-[4.2vw] tracking-tight text-white">Cuphead</h3>
+                  <i class="slice-ico ri-windows-fill text-2xl text-white"></i>
+                  <p class="slice-badge text-gray-400">
+                    <span style="background-color:#F43F5E">Action</span>
+                    <span style="background-color:#60A5FA">Indie</span>
+                  </p>
+                </div>
+              </div>
+              <div class="slice-right w-[12vw] h-[4vw] text-[1.2vw] text-white  flex items-center justify-center font-[twk]  overflow-hidden max-sm:w-[25vw] max-sm:h-[12vw]">
+                <!-- <img class="slimg1 absolute left-[60%] top-[-30%]" src="sliceimg1.png" alt=""> -->
+                 
+                  <div class="h-full w-[40%] bg-[#A1CD44] flex justify-center items-center px-2 py-4">
+                    <span class="discount text-black bg-[#A1CD44] font-bold text-[1.2vw] max-sm:text-[3vw]">-30%</span>
+                  </div>
+                  <div class="pricing_tag w-[60%] bg-black h-full flex flex-col justify-center items-center">
+                    <span class="org-price bg-black text-sm line-through text-zinc-200 max-sm:text-[2.8vw]">₹ 565</span>
+                    <div class="discounted_price bg-black text-[1.2vw] text-white font-semibold max-sm:text-[3vw]">₹ 395</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="specials-section absolute bg-zinc-500 w-full h-full inline-block left-[300%]"></div> -->
+        </div>
+      </div></div>
+
+
+
+      
+      <!-- OFFER SECTION -->
+      <div class="offer-page relative z-[3000] w-full max-sm:h-[70vh] h-screen  flex justify-center flex-col gap-10">
+        <div class="overlay-grain-pattern overlay-grain-basic"></div>
+        <div class="offer-title max-sm:mt-20 px-[8vw] pb-10 max-sm:pb-4">
+          <h1 class="max-sm:text-[6vw] text-4xl tracking-tight leading-none text-[var(--light)] font-[redtrap] uppercase">Special</h1>
+          <h1 class="max-sm:text-[5.6vh] text-8xl tracking-tight leading-none text-white font-[redtrap] uppercase">Offers</h1>
+        </div>
+        <div class="marque-effect relative max-sm:h-4/5 h-1/2 overflow-hidden">
+          <div class="blur-left absolute left-0 top-0"></div>
+          <div class="blur-right absolute right-0 top-0"></div>
+          <div class="move h-full absolute top-0 left-0 whitespace-nowrap">
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="https://cdn.cloudflare.steamstatic.com/steam/spotlights/c2db60878ea3ca6d3ac6e6e4/spotlight_image_english.jpg?t=1715280184" alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-75%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 2,999</p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center "><p>₹ 749</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="images/landing-page-images/apex/img1.webp" alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-60%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 1,499 </p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center "><p>₹ 599</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1954200/header.jpg?t=1664298117" alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-20%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 4,299</p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center "><p>₹ 3,439</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="https://cdn.cloudflare.steamstatic.com/steam/spotlights/182f28e98a77c67bfb7e31fd/spotlight_image_english.jpg?t=1714664658 " alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-50%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 4,499</p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center "><p>₹ 2,249</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="https://cdn.cloudflare.steamstatic.com/steam/spotlights/c2db60878ea3ca6d3ac6e6e4/spotlight_image_english.jpg?t=1715280184" alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-30%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 3,599</p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center "><p>₹ 2,519</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="https://cdn.cloudflare.steamstatic.com/steam/spotlights/8f0a57df9911fe494ebfe064/spotlight_image_english.jpg?t=1715185347" alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-20%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 2,999</p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center"><p>₹ 2,399</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1954200/header.jpg?t=1664298117" alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-20%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 4,299</p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center"><p>₹ 3,439</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="marquee-cards">
+              <div class="img-section">
+                <img class="marquee-img" src="https://cdn.cloudflare.steamstatic.com/steam/spotlights/182f28e98a77c67bfb7e31fd/spotlight_image_english.jpg?t=1714664658 " alt="">
+
+              </div>
+              <div class="offer-section w-full h-[45%] flex justify-center items-center">
+                <div class="offer w-3/5 h-3/5 flex overflow-hidden">
+                  <div class="offer-left w-1/2 flex justify-center items-center">
+                    <h1 class="text-2xl font-semibold">-50%</h1>
+                  </div>
+                  <div class="offer-right w-1/2 flex flex-col">
+                    <div class="offer-r-top h-1/2 flex justify-center items-center"><p>₹ 4,499</p></div>
+                    <div class="offer-r-bottom font-bold h-1/2 flex justify-center items-center"><p>₹ 2,249 </p></div></div>
+
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+
+
+      <!-- FOOTER SECTION  -->
+      <div class="footer w-full relative left-0 bottom-0 h-screen bg-[#0D0F12] text-[--light] flex flex-col gap-0">
+        <!-- FOOTER TOP -->
+        <div class="overlay-grain-pattern overlay-grain-basic"></div>
+        <div class="footer-top relative top-0 w-full h-[35%] flex max-sm:flex-col justify-between px-[10vw] py-8 gap-4">
+          <div class="f-top-left">
+            <img class="max-sm:w-[25vw] w-[8vw]" src="images/logo_steam_footer.png" alt="">
+          </div>
+          <div class="f-top-right flex max-sm:gap-[2vw] max-sm:justify-between gap-[8vw] text-xl">
+            <div class="f-right1 flex flex-col">
+              <a class="font-[aeonik] capitalize hover:text-white hover:underline" href="#">about valve</a>
+              <a class="font-[aeonik] capitalize hover:text-white hover:underline" href="#">jobs</a>
+              <a class="font-[aeonik] capitalize hover:text-white hover:underline" href="#">steamworks</a>
+              <a class="font-[aeonik] capitalize hover:text-white hover:underline" href="#">steam distribution</a>
+              <a class="font-[aeonik] capitalize hover:text-white hover:underline" href="#">support</a>
+              <a class="font-[aeonik] capitalize hover:text-white hover:underline" href="#">gift cards</a>
+            </div>
+            <div class="f-right2 flex flex-col uppercase tracking-normal">
+              <a class="font-[aeonik] capitalize hover:text-white hover:underline" href="#"><span><i class="ri-facebook-circle-fill"></i></span>Steam</a>
+              <a class="font-[aeonik] lowercase hover:text-white hover:underline" href="#"><span><i class="ri-twitter-x-fill"></i></span>@steam</a>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- FOOTER MID -->
+        <div class="footer-mid w-full h-[30%] flex justify-center items-center">
+
+          <div class="f-mid w-4/5 flex flex-col gap-[1rem]">
+
+            <div class="top-line w-full h-[1px] bg-[var(--light)]"></div>
+
+            <div class="valve-section w-full px-[10vw] flex flex-col font-[Gilroy] justify-center items-center  gap-[1rem]">
+
+              <div class="valve-content flex max-sm:flex-col max-sm:justify-center max-sm:items-center gap-[1rem]">
+
+                <img class="w-[8vw] max-sm:w-[15vw]" src="images/footerLogo_valve_new.png" alt="">
+
+                <p class="font-[twk] max-sm:text-center max-sm:text-[3vw]">© 2024 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries. VAT included in all prices where applicable.</p>
+
+              </div>
+
+              <div class="valve-links flex justify-center gap-[2rem] max-sm:gap-[1rem]">
+                <a class="font-[aeonik] capitalize hover:underline" href="#">privacy policy</a>
+                <a class="font-[aeonik] capitalize hover:underline" href="#">legal</a>
+                <a class="font-[aeonik] capitalize hover:underline" href="#">steam subscriber agreement</a>
+                <a class="font-[aeonik] capitalize hover:underline" href="#">refunds</a>
+                <a class="font-[aeonik] capitalize hover:underline" href="#">cookies</a>
+              </div>
+            </div>
+            <div class="btm-line w-full h-[1px] bg-[var(--light)]"></div>
+          </div>
+        </div>
+          
+        <div class="footer-bottom relative overflow-hidden w-full h-[35%] flex justify-center items-center">
+          <div class="footer-circle w-[5vw] h-[5vw] bg-[#548397] absolute z-[550] rounded-full"></div>
+          <h1 class="footer-title text-[20vw] font-bold tracking-wider">Steam</h1>
+        </div>
+      </div>
+      
+     
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
